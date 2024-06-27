@@ -7,7 +7,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(LINK_WHAT_YOU_USE ON)
 
 # 项目
-project(cmake-project-template LANGUAGES C CXX)
+project(project-template LANGUAGES C CXX)
 
 # 防止在源码目录下进行内部构建
 if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
