@@ -19,17 +19,21 @@ namespace libraryT
 {
 namespace utiles
 {
+/**
+ * @brief 自定义的Math类
+ */
 class LIB_API Math
 {
 public:
+    /**
+     * @brief 计算两个整数的加法
+     * @param x 第一个整数
+     * @param y 第二个整数
+     * @return 返回两个整数的和
+     */
     static int add(int x, int y);
 };
 } // namespace utiles
 } // namespace libraryT
-
-extern "C"
-{
-    int LIB_API MathAdd(int x, int y);
-}
 
 #endif // LIBRARY_T_UTILES_H
