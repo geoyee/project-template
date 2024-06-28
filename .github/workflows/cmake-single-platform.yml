@@ -41,3 +41,10 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}}
 
+    - name: Doxygen Action
+      # You may pin to the exact commit or the version.
+      # uses: mattnotmitt/doxygen-action@cbe72c8e402e8a3faa1f0b247ef90aa6c8e4ce74
+      uses: mattnotmitt/doxygen-action@1.9.8
+      with:
+        # Path to Doxyfile
+        doxyfile-path: ./Doxyfile # default is ./Doxyfile
