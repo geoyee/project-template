@@ -24,5 +24,4 @@
 
 ## 默认依赖
 
-- 基础库：[POCO](https://github.com/pocoproject/poco.git)
 - 测试库：[GoogleTest](https://github.com/google/googletest.git)

@@ -3,6 +3,8 @@
 #ifndef LIBRARY_T_CAPI_H
 #define LIBRARY_T_CAPI_H
 
+#include <libraryT/utiles.h>
+
 extern "C"
 {
     /**

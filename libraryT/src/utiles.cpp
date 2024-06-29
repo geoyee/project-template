@@ -1,8 +1,6 @@
 #include <libraryT/utiles.h>
 #include <libraryT/capi.h>
 
-#include <Poco/Path.h>
-
 #include <iostream>
 #include <string>
 
@@ -12,10 +10,7 @@ namespace utiles
 {
 int Math::add(int x, int y)
 {
-    std::string path = Poco::Path::self();
-    int result = x + y;
-    std::cout << "[" << path << "]: " << x << " + " << y << " = " << result << std::endl;
-    return result;
+    return x + y;
 }
 } // namespace utiles
 } // namespace libraryT

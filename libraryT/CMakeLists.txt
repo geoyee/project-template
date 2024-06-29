@@ -5,7 +5,7 @@ project(libraryT)
 # 编译为动态库
 add_library(${PROJECT_NAME} SHARED ${CODE_FILES})
 target_include_directories(${PROJECT_NAME} PUBLIC include)
-target_link_libraries(${PROJECT_NAME} PRIVATE ${Poco_LIBS})
+# target_link_libraries(${PROJECT_NAME} PUBLIC xxx)
 
 # 安装
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
