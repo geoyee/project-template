@@ -13,6 +13,7 @@
     │    ├─ include/libraryT           # 头文件
     │    └─ src                        # 源文件
     ├─ sample                          # 示例代码
+    ├─ swig                            # swig多语言接口导出
     ├─ test                            # 测试代码
     ├─ .clang-format                   # 代码风格文件
     ├─ .gitignore                      # git忽略文件
@@ -22,6 +23,9 @@
     └─ README.md                       # 说明
 ```
 
-## 默认依赖
+## 依赖
 
-- 测试库：[GoogleTest](https://github.com/google/googletest.git)
+- 代码测试：[GoogleTest](https://github.com/google/googletest)
+- \* 代码格式化：[LLVM](https://github.com/llvm/llvm-project)
+- \* 多语言导出：[SWIG](https://github.com/doxygen/doxygen)
+- \* 文档导出：[Doxygen](https://github.com/swig/swig)
