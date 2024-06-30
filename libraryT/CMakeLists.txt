@@ -10,5 +10,5 @@ target_include_directories(${PROJECT_NAME} PUBLIC include)
 set(PROJ_LIB_NAME ${PROJECT_NAME} CACHE STRING "library name")
 
 # 安装
-install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
+install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION ${SHARED_BIN_DIR})
 install(DIRECTORY include/ DESTINATION include)
