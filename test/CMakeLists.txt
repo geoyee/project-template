@@ -4,7 +4,7 @@ project(test_main)
 
 # 编译为可执行文件
 add_executable(${PROJECT_NAME} ${CODE_FILES})
-target_link_libraries(${PROJECT_NAME} PRIVATE libraryT ${GTest_LIBS})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJ_LIB_NAME} ${GTest_LIBS})
 
 # 测试
 include(GoogleTest)

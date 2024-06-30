@@ -7,6 +7,8 @@ add_library(${PROJECT_NAME} SHARED ${CODE_FILES})
 target_include_directories(${PROJECT_NAME} PUBLIC include)
 # target_link_libraries(${PROJECT_NAME} PUBLIC <other_libraries>)
 
+set(PROJ_LIB_NAME ${PROJECT_NAME} CACHE STRING "library name")
+
 # 安装
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
 install(DIRECTORY include/ DESTINATION include)

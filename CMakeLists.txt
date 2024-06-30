@@ -7,14 +7,11 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(LINK_WHAT_YOU_USE ON)
 
 # 设置CMake策略
-if(POLICY CMP0048)
-    cmake_policy(SET CMP0048 NEW)
+if(POLICY CMP0078)
+    cmake_policy(SET CMP0078 NEW)
 endif()
-if(POLICY CMP0069)
-    cmake_policy(SET CMP0069 NEW)
-endif ()
-if(POLICY CMP0077)
-    cmake_policy(SET CMP0077 NEW)
+if(POLICY CMP0086)
+    cmake_policy(SET CMP0086 NEW)
 endif()
 
 # 项目
@@ -79,9 +76,11 @@ endif()
 # 可选编译内容
 option(BUILD_SAMPLE "Build sample" ON)
 option(BUILD_TEST "Build test" ON)
+option(BUILD_OLANGS "Build other languages" ON)
 
 # 添加子目录
 add_subdirectory(libraryT)
+set(LIBRARYT_HEADER_DIR "${PROJECT_ROOT_DIR}/libraryT/include")
 
 if(BUILD_SAMPLE)
     add_subdirectory(sample)
@@ -96,4 +95,8 @@ if(BUILD_TEST)
     add_subdirectory("${PROJECT_DEPENDS_DIR}/googletest")
     update_cached_list(GTest_LIBS GTest::gtest)
     add_subdirectory(test)
+endif()
+
+if(BUILD_OLANGS)
+    add_subdirectory(swig)
 endif()
