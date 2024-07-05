@@ -1,6 +1,6 @@
-# cmake-project-template
+# project-template
 
-自用的 C/C++项目模板
+自用的C/C++项目的CMake模板
 
 ## 结构
 
@@ -26,6 +26,6 @@
 ## 依赖
 
 - 代码测试：[GoogleTest](https://github.com/google/googletest)
-- \* 代码格式化：[LLVM](https://github.com/llvm/llvm-project)
-- \* 多语言导出：[SWIG](https://github.com/doxygen/doxygen)
-- \* 文档导出：[Doxygen](https://github.com/swig/swig)
+- \*代码格式化：[LLVM](https://github.com/llvm/llvm-project)
+- \*多语言导出：[SWIG](https://github.com/doxygen/doxygen)
+- \*文档导出：[Doxygen](https://github.com/swig/swig)
