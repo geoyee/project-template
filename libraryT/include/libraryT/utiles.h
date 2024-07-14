@@ -15,10 +15,31 @@
 #define LIB_API
 #endif // _MSC_VER || __CYGWIN__ || __MINGW32__ || __BCPLUSPLUS__ || __MWERKS__
 
+#include <vector>
+
 namespace libraryT
 {
 namespace utiles
 {
+/**
+ * @brief 开方方法的枚举
+ */
+enum class SqrtMethod
+{
+    Quick,  ///< 快速方法
+    Newton, ///< 牛顿迭代法
+    Binary  ///< 二分法
+};
+
+/**
+ * @brief 二维坐标
+ */
+struct Point
+{
+    double x; ///< x坐标
+    double y; ///< y坐标
+};
+
 /**
  * @brief 自定义的Math类
  */
@@ -32,6 +53,42 @@ public:
      * @return 返回两个整数的和
      */
     static int add(int x, int y);
+
+    /**
+     * @brief 计算两个点间的距离
+     * @param p1 第一个点
+     * @param p2 第二个点
+     * @return 返回两个点间的距离 
+     */
+    static double distance(const Point& p1, const Point& p2);
+
+    /**
+     * @brief 计算一个数组的和
+     * @param nums 数组
+     * @return 返回数组的和
+     */
+    static int sum(std::vector<int>& nums);
+
+    /**
+     * @brief 构造函数
+     * @param method 开方的方法
+     */
+    Math(SqrtMethod method = SqrtMethod::Quick) : m_method(method) { }
+
+    /**
+     * @brief 默认析构函数
+     */
+    ~Math() = default;
+
+    /**
+     * @brief 计算一个数的开方
+     * @param x 开方数
+     * @return 返回开方结果
+     */
+    float sqrt(float x);
+
+private:
+    SqrtMethod m_method; ///< 开方的方法
 };
 } // namespace utiles
 } // namespace libraryT

@@ -1,6 +1,5 @@
 # https://clang.llvm.org/docs/ClangFormatStyleOptions.html
 ---
-
 Language: Cpp
 BasedOnStyle: Google
 AccessModifierOffset: -4
@@ -84,7 +83,7 @@ FixNamespaceComments: true
 ShortNamespaceLines: 0
 IncludeBlocks: Preserve
 SortIncludes: Never
-IncludeIsMainSourceRegex: ''
+IncludeIsMainSourceRegex: ""
 IndentAccessModifiers: false
 IndentCaseLabels: true
 IndentCaseBlocks: false
@@ -103,7 +102,7 @@ NamespaceIndentation: None
 PointerAlignment: Right
 ReferenceAlignment: Left
 PPIndentWidth: -1
-ReflowComments: true
+ReflowComments: false
 RemoveBracesLLVM: false
 RequiresClausePosition: OwnLine
 SeparateDefinitionBlocks: Always
@@ -132,7 +131,6 @@ SpacesInLineCommentPrefix:
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
 SpaceBeforeSquareBrackets: false
-BitFieldColonSpacing: Both
 Standard: Auto
 TabWidth: 4
 UseCRLF: true

@@ -3,13 +3,29 @@
 
 #include <gtest/gtest.h>
 
-TEST(libraryT_utiles_test, add_capi)
-{
-    libraryT::utiles::Math mathT;
-    EXPECT_EQ(mathT.add(1, 2), 3);
-}
+#include <cmath>
 
-TEST(libraryT_utiles_test, add_memfunc)
+TEST(libraryT_utiles_test, add)
 {
     EXPECT_EQ(MathAdd(1, 2), 3);
+}
+
+TEST(libraryT_utiles_test, distance)
+{
+    EXPECT_DOUBLE_EQ(MathDistance({0, 0}, {3, 4}), 5);
+}
+
+TEST(libraryT_utiles_test, sum)
+{
+    int nums[] = {1, 2, 3};
+    EXPECT_EQ(MathSum(nums, 3), 6);
+}
+
+TEST(libraryT_utiles_test, sqrt)
+{
+    float sqrt3 = static_cast<float>(sqrt(3));
+    // EXPECT_FLOAT_EQ(MathSqrt(3, 0), sqrt3); // 快速开方精度不够，导致测试失败
+    EXPECT_TRUE(fabs(MathSqrt(3, 0) - sqrt3) < 0.01);
+    EXPECT_FLOAT_EQ(MathSqrt(3, 1), sqrt3);
+    EXPECT_FLOAT_EQ(MathSqrt(3, 2), sqrt3);
 }

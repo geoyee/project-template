@@ -108,27 +108,69 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="utiles_8h.html#a77278c8cc96e39fb27b5d0a347c8fb3d">   15</a></span><span class="preprocessor">#define LIB_API</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#endif </span><span class="comment">// _MSC_VER || __CYGWIN__ || __MINGW32__ || __BCPLUSPLUS__ || __MWERKS__</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespacelibrary_t.html">   18</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacelibrary_t.html">libraryT</a></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespacelibrary_t_1_1utiles.html">   20</a></span><span class="keyword">namespace </span>utiles</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespacelibrary_t.html">   20</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacelibrary_t.html">libraryT</a></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classlibrary_t_1_1utiles_1_1_math.html">   25</a></span><span class="keyword">class </span><a class="code hl_define" href="utiles_8h.html#a77278c8cc96e39fb27b5d0a347c8fb3d">LIB_API</a> <a class="code hl_class" href="classlibrary_t_1_1utiles_1_1_math.html">Math</a></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> add(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespacelibrary_t_1_1utiles.html">   22</a></span><span class="keyword">namespace </span>utiles</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="namespacelibrary_t_1_1utiles.html#ab6dc2a66e462bc438aa75b6a515c28d9">   27</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespacelibrary_t_1_1utiles.html#ab6dc2a66e462bc438aa75b6a515c28d9">SqrtMethod</a></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_enumvalue" href="namespacelibrary_t_1_1utiles.html#ab6dc2a66e462bc438aa75b6a515c28d9a809b7a805a28884b364837536cdc38b7">Quick</a>,  </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_enumvalue" href="namespacelibrary_t_1_1utiles.html#ab6dc2a66e462bc438aa75b6a515c28d9a1c8b97c83b0726216cd5dbc88a64b0ed">Newton</a>, </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_enumvalue" href="namespacelibrary_t_1_1utiles.html#ab6dc2a66e462bc438aa75b6a515c28d9a6ce976e8f061b2b5cfe4d0c50c3405dd">Binary</a>  </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
 </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>} <span class="comment">// namespace utiles</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structlibrary_t_1_1utiles_1_1_point.html">   37</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structlibrary_t_1_1utiles_1_1_point.html">Point</a></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structlibrary_t_1_1utiles_1_1_point.html#a063102598a910a17ac3851b8caa5a6d4">   39</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="structlibrary_t_1_1utiles_1_1_point.html#a063102598a910a17ac3851b8caa5a6d4">x</a>; </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structlibrary_t_1_1utiles_1_1_point.html#aec382657fe31e386476856b32805abb0">   40</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="structlibrary_t_1_1utiles_1_1_point.html#aec382657fe31e386476856b32805abb0">y</a>; </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
 </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>} <span class="comment">// namespace libraryT</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classlibrary_t_1_1utiles_1_1_math.html">   46</a></span><span class="keyword">class </span><a class="code hl_define" href="utiles_8h.html#a77278c8cc96e39fb27b5d0a347c8fb3d">LIB_API</a> <a class="code hl_class" href="classlibrary_t_1_1utiles_1_1_math.html">Math</a></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> add(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">static</span> <span class="keywordtype">double</span> distance(<span class="keyword">const</span> <a class="code hl_struct" href="structlibrary_t_1_1utiles_1_1_point.html">Point</a>&amp; p1, <span class="keyword">const</span> <a class="code hl_struct" href="structlibrary_t_1_1utiles_1_1_point.html">Point</a>&amp; p2);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> sum(std::vector&lt;int&gt;&amp; nums);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classlibrary_t_1_1utiles_1_1_math.html#abc27df5f913f2dec33c988359515c73b">   76</a></span>    <a class="code hl_function" href="classlibrary_t_1_1utiles_1_1_math.html#abc27df5f913f2dec33c988359515c73b">Math</a>(<a class="code hl_enumeration" href="namespacelibrary_t_1_1utiles.html#ab6dc2a66e462bc438aa75b6a515c28d9">SqrtMethod</a> method = SqrtMethod::Quick) : m_method(method) { }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classlibrary_t_1_1utiles_1_1_math.html#a98ef64bcbec8b4e1eea71bf02bbe81b7">   81</a></span>    <a class="code hl_function" href="classlibrary_t_1_1utiles_1_1_math.html#a98ef64bcbec8b4e1eea71bf02bbe81b7">~Math</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordtype">float</span> sqrt(<span class="keywordtype">float</span> x);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classlibrary_t_1_1utiles_1_1_math.html#a8cc877cddc3527922008c6c59c312c79">   91</a></span>    <a class="code hl_enumeration" href="namespacelibrary_t_1_1utiles.html#ab6dc2a66e462bc438aa75b6a515c28d9">SqrtMethod</a> <a class="code hl_variable" href="classlibrary_t_1_1utiles_1_1_math.html#a8cc877cddc3527922008c6c59c312c79">m_method</a>; </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>};</div>
 </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#endif </span><span class="comment">// LIBRARY_T_UTILES_H</span></div>
-<div class="ttc" id="aclasslibrary_t_1_1utiles_1_1_math_html"><div class="ttname"><a href="classlibrary_t_1_1utiles_1_1_math.html">libraryT::utiles::Math</a></div><div class="ttdoc">自定义的Math类</div><div class="ttdef"><b>定义</b> utiles.h:26</div></div>
-<div class="ttc" id="anamespacelibrary_t_html"><div class="ttname"><a href="namespacelibrary_t.html">libraryT</a></div><div class="ttdef"><b>定义</b> utiles.h:19</div></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>} <span class="comment">// namespace utiles</span></div>
+</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>} <span class="comment">// namespace libraryT</span></div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#endif </span><span class="comment">// LIBRARY_T_UTILES_H</span></div>
+<div class="ttc" id="aclasslibrary_t_1_1utiles_1_1_math_html"><div class="ttname"><a href="classlibrary_t_1_1utiles_1_1_math.html">libraryT::utiles::Math</a></div><div class="ttdoc">自定义的Math类</div><div class="ttdef"><b>定义</b> utiles.h:47</div></div>
+<div class="ttc" id="aclasslibrary_t_1_1utiles_1_1_math_html_a8cc877cddc3527922008c6c59c312c79"><div class="ttname"><a href="classlibrary_t_1_1utiles_1_1_math.html#a8cc877cddc3527922008c6c59c312c79">libraryT::utiles::Math::m_method</a></div><div class="ttdeci">SqrtMethod m_method</div><div class="ttdoc">开方的方法</div><div class="ttdef"><b>定义</b> utiles.h:91</div></div>
+<div class="ttc" id="aclasslibrary_t_1_1utiles_1_1_math_html_a98ef64bcbec8b4e1eea71bf02bbe81b7"><div class="ttname"><a href="classlibrary_t_1_1utiles_1_1_math.html#a98ef64bcbec8b4e1eea71bf02bbe81b7">libraryT::utiles::Math::~Math</a></div><div class="ttdeci">~Math()=default</div><div class="ttdoc">默认析构函数</div></div>
+<div class="ttc" id="aclasslibrary_t_1_1utiles_1_1_math_html_abc27df5f913f2dec33c988359515c73b"><div class="ttname"><a href="classlibrary_t_1_1utiles_1_1_math.html#abc27df5f913f2dec33c988359515c73b">libraryT::utiles::Math::Math</a></div><div class="ttdeci">Math(SqrtMethod method=SqrtMethod::Quick)</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>定义</b> utiles.h:76</div></div>
+<div class="ttc" id="anamespacelibrary_t_1_1utiles_html_ab6dc2a66e462bc438aa75b6a515c28d9"><div class="ttname"><a href="namespacelibrary_t_1_1utiles.html#ab6dc2a66e462bc438aa75b6a515c28d9">libraryT::utiles::SqrtMethod</a></div><div class="ttdeci">SqrtMethod</div><div class="ttdoc">开方方法的枚举</div><div class="ttdef"><b>定义</b> utiles.h:28</div></div>
+<div class="ttc" id="anamespacelibrary_t_1_1utiles_html_ab6dc2a66e462bc438aa75b6a515c28d9a1c8b97c83b0726216cd5dbc88a64b0ed"><div class="ttname"><a href="namespacelibrary_t_1_1utiles.html#ab6dc2a66e462bc438aa75b6a515c28d9a1c8b97c83b0726216cd5dbc88a64b0ed">libraryT::utiles::SqrtMethod::Newton</a></div><div class="ttdeci">@ Newton</div><div class="ttdoc">牛顿迭代法</div></div>
+<div class="ttc" id="anamespacelibrary_t_1_1utiles_html_ab6dc2a66e462bc438aa75b6a515c28d9a6ce976e8f061b2b5cfe4d0c50c3405dd"><div class="ttname"><a href="namespacelibrary_t_1_1utiles.html#ab6dc2a66e462bc438aa75b6a515c28d9a6ce976e8f061b2b5cfe4d0c50c3405dd">libraryT::utiles::SqrtMethod::Binary</a></div><div class="ttdeci">@ Binary</div><div class="ttdoc">二分法</div></div>
+<div class="ttc" id="anamespacelibrary_t_1_1utiles_html_ab6dc2a66e462bc438aa75b6a515c28d9a809b7a805a28884b364837536cdc38b7"><div class="ttname"><a href="namespacelibrary_t_1_1utiles.html#ab6dc2a66e462bc438aa75b6a515c28d9a809b7a805a28884b364837536cdc38b7">libraryT::utiles::SqrtMethod::Quick</a></div><div class="ttdeci">@ Quick</div><div class="ttdoc">快速方法</div></div>
+<div class="ttc" id="anamespacelibrary_t_html"><div class="ttname"><a href="namespacelibrary_t.html">libraryT</a></div><div class="ttdef"><b>定义</b> utiles.h:21</div></div>
+<div class="ttc" id="astructlibrary_t_1_1utiles_1_1_point_html"><div class="ttname"><a href="structlibrary_t_1_1utiles_1_1_point.html">libraryT::utiles::Point</a></div><div class="ttdoc">二维坐标</div><div class="ttdef"><b>定义</b> utiles.h:38</div></div>
+<div class="ttc" id="astructlibrary_t_1_1utiles_1_1_point_html_a063102598a910a17ac3851b8caa5a6d4"><div class="ttname"><a href="structlibrary_t_1_1utiles_1_1_point.html#a063102598a910a17ac3851b8caa5a6d4">libraryT::utiles::Point::x</a></div><div class="ttdeci">double x</div><div class="ttdoc">x坐标</div><div class="ttdef"><b>定义</b> utiles.h:39</div></div>
+<div class="ttc" id="astructlibrary_t_1_1utiles_1_1_point_html_aec382657fe31e386476856b32805abb0"><div class="ttname"><a href="structlibrary_t_1_1utiles_1_1_point.html#aec382657fe31e386476856b32805abb0">libraryT::utiles::Point::y</a></div><div class="ttdeci">double y</div><div class="ttdoc">y坐标</div><div class="ttdef"><b>定义</b> utiles.h:40</div></div>
 <div class="ttc" id="autiles_8h_html_a77278c8cc96e39fb27b5d0a347c8fb3d"><div class="ttname"><a href="utiles_8h.html#a77278c8cc96e39fb27b5d0a347c8fb3d">LIB_API</a></div><div class="ttdeci">#define LIB_API</div><div class="ttdef"><b>定义</b> utiles.h:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
