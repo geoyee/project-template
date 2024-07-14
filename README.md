@@ -1,6 +1,6 @@
 # project-template
 
-自用的C/C++项目的CMake模板
+自用的 C/C++项目的 CMake 模板
 
 ## 结构
 
@@ -15,7 +15,8 @@
     ├─ sample                          # 示例代码
     ├─ swig                            # swig多语言接口导出
     ├─ test                            # 测试代码
-    ├─ .clang-format                   # 代码风格文件
+    ├─ .clang-format                   # C/C++代码风格文件
+    ├─ .cmake-format.py                # CMake代码风格文件
     ├─ .gitignore                      # git忽略文件
     ├─ .gitmoudles                     # git子模块文件
     ├─ CMakeLists.txt                  # 顶层CMake文件
@@ -26,6 +27,7 @@
 ## 依赖
 
 - 代码测试：[GoogleTest](https://github.com/google/googletest)
-- \*代码格式化：[LLVM](https://github.com/llvm/llvm-project)
+- \*C/C++ 代码格式化：[LLVM](https://github.com/llvm/llvm-project)
+- \*CMake 代码格式化：[CMakeLang](https://github.com/cheshirekow/cmake_format)
 - \*多语言导出：[SWIG](https://github.com/doxygen/doxygen)
 - \*文档导出：[Doxygen](https://github.com/swig/swig)
