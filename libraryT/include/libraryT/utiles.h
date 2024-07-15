@@ -16,6 +16,7 @@
 #endif // _MSC_VER || __CYGWIN__ || __MINGW32__ || __BCPLUSPLUS__ || __MWERKS__
 
 #include <vector>
+#include <functional>
 
 namespace libraryT
 {
@@ -41,6 +42,13 @@ struct Point
 };
 
 /**
+ * @brief 打印回调函数
+ * @param 数据值
+ * @param 透传指针
+ */
+using PrintCallback = std::function<int(size_t, void *)>;
+
+/**
  * @brief 自定义的Math类
  */
 class LIB_API Math
@@ -58,7 +66,7 @@ public:
      * @brief 计算两个点间的距离
      * @param p1 第一个点
      * @param p2 第二个点
-     * @return 返回两个点间的距离 
+     * @return 返回两个点间的距离
      */
     static double distance(const Point& p1, const Point& p2);
 
@@ -68,6 +76,14 @@ public:
      * @return 返回数组的和
      */
     static int sum(std::vector<int>& nums);
+
+    /**
+     * @brief 获取一个数的哈希值
+     * @param x 要计算哈希值的数
+     * @param callback 打印回调函数
+     * @return 返回开方结果
+     */
+    static size_t hash(double x, PrintCallback callback, void *data);
 
     /**
      * @brief 构造函数

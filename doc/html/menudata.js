@@ -28,6 +28,7 @@ var menudata={children:[
 {text:"命名空间列表",url:"namespaces.html"},
 {text:"命名空间成员",url:"namespacemembers.html",children:[
 {text:"全部",url:"namespacemembers.html"},
+{text:"类型定义",url:"namespacemembers_type.html"},
 {text:"枚举",url:"namespacemembers_enum.html"}]}]},
 {text:"类",url:"annotated.html",children:[
 {text:"类列表",url:"annotated.html"},

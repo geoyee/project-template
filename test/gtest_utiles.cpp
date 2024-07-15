@@ -21,6 +21,11 @@ TEST(libraryT_utiles_test, sum)
     EXPECT_EQ(MathSum(nums, 3), 6);
 }
 
+TEST(libraryT_utiles_test, hash)
+{
+    EXPECT_EQ(MathHash(3.14, nullptr, nullptr), std::hash<double>()(3.14));
+}
+
 TEST(libraryT_utiles_test, sqrt)
 {
     float sqrt3 = static_cast<float>(sqrt(3));

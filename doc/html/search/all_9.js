@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['quick_0',['Quick',['../namespacelibrary_t_1_1utiles.html#ab6dc2a66e462bc438aa75b6a515c28d9a809b7a805a28884b364837536cdc38b7',1,'libraryT::utiles']]],
-  ['quicksqrt_1',['quickSqrt',['../utiles_8cpp.html#a6539451a1bd1bb8391d6fa6f06c09aea',1,'utiles.cpp']]]
+  ['point_0',['Point',['../structlibrary_t_1_1utiles_1_1_point.html',1,'libraryT::utiles']]],
+  ['precision_1',['PRECISION',['../utiles_8cpp.html#a9c7b069fee3c8184e14a7de8e5da2dc6',1,'utiles.cpp']]],
+  ['printcallback_2',['PrintCallback',['../namespacelibrary_t_1_1utiles.html#a693a4d01077c06b2f0c8b7ce6dc40dd7',1,'libraryT::utiles']]]
 ];

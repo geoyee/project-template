@@ -100,6 +100,16 @@ int Math::sum(std::vector<int>& nums)
     return sum;
 }
 
+size_t Math::hash(double x, PrintCallback callback, void *data)
+{
+    size_t res = std::hash<double>()(x);
+    if (callback)
+    {
+        callback(res, data);
+    }
+    return res;
+}
+
 float Math::sqrt(float x)
 {
     switch (m_method)
@@ -125,14 +135,19 @@ double MathDistance(libraryT::utiles::Point p1, libraryT::utiles::Point p2)
     return libraryT::utiles::Math::distance(p1, p2);
 }
 
-float MathSqrt(float x, int method)
-{
-    auto mathCls = libraryT::utiles::Math(static_cast<libraryT::utiles::SqrtMethod>(method));
-    return mathCls.sqrt(x);
-}
-
 int MathSum(int *arr, int size)
 {
     std::vector<int> vec(arr, arr + size);
     return libraryT::utiles::Math::sum(vec);
+}
+
+size_t MathHash(double x, PrintCallback callback, void *data)
+{
+    return libraryT::utiles::Math::hash(x, callback, data);
+}
+
+float MathSqrt(float x, int method)
+{
+    auto mathCls = libraryT::utiles::Math(static_cast<libraryT::utiles::SqrtMethod>(method));
+    return mathCls.sqrt(x);
 }

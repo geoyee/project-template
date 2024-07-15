@@ -1,14 +1,15 @@
 var indexSectionsWithContent =
 {
-  0: "abcdflmnpqsuxy~",
+  0: "abcdfhlmnpqsuxy~",
   1: "mp",
   2: "l",
   3: "cu",
-  4: "abdmnqs~",
+  4: "abdhmnqs~",
   5: "mxy",
-  6: "s",
-  7: "bnq",
-  8: "cflp"
+  6: "p",
+  7: "s",
+  8: "bnq",
+  9: "cflp"
 };
 
 var indexSectionNames =
@@ -19,9 +20,10 @@ var indexSectionNames =
   3: "files",
   4: "functions",
   5: "variables",
-  6: "enums",
-  7: "enumvalues",
-  8: "defines"
+  6: "typedefs",
+  7: "enums",
+  8: "enumvalues",
+  9: "defines"
 };
 
 var indexSectionLabels =
@@ -32,8 +34,9 @@ var indexSectionLabels =
   3: "文件",
   4: "函数",
   5: "变量",
-  6: "枚举",
-  7: "枚举值",
-  8: "宏定义"
+  6: "类型定义",
+  7: "枚举",
+  8: "枚举值",
+  9: "宏定义"
 };
 

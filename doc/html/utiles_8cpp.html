@@ -137,12 +137,15 @@ $(function(){ initResizable(false); });
 <tr class="memitem:a573bd0013a6dee686efa8ba949687a6c" id="r_a573bd0013a6dee686efa8ba949687a6c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a573bd0013a6dee686efa8ba949687a6c">MathDistance</a> (<a class="el" href="structlibrary_t_1_1utiles_1_1_point.html">libraryT::utiles::Point</a> p1, <a class="el" href="structlibrary_t_1_1utiles_1_1_point.html">libraryT::utiles::Point</a> p2)</td></tr>
 <tr class="memdesc:a573bd0013a6dee686efa8ba949687a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算两个点间的距离  <br /></td></tr>
 <tr class="separator:a573bd0013a6dee686efa8ba949687a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59a0e0e945d915aabca3c9b1c87ca982" id="r_a59a0e0e945d915aabca3c9b1c87ca982"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59a0e0e945d915aabca3c9b1c87ca982">MathSqrt</a> (float x, int method)</td></tr>
-<tr class="memdesc:a59a0e0e945d915aabca3c9b1c87ca982"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算一个数的开方  <br /></td></tr>
-<tr class="separator:a59a0e0e945d915aabca3c9b1c87ca982"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a776641f41a90cf2f8589422c242477ec" id="r_a776641f41a90cf2f8589422c242477ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a776641f41a90cf2f8589422c242477ec">MathSum</a> (int *arr, int size)</td></tr>
 <tr class="memdesc:a776641f41a90cf2f8589422c242477ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算一个数的和  <br /></td></tr>
 <tr class="separator:a776641f41a90cf2f8589422c242477ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9cd1fbafaeb73489693b40412d38580" id="r_ae9cd1fbafaeb73489693b40412d38580"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9cd1fbafaeb73489693b40412d38580">MathHash</a> (double x, <a class="el" href="namespacelibrary_t_1_1utiles.html#a693a4d01077c06b2f0c8b7ce6dc40dd7">PrintCallback</a> callback, void *data)</td></tr>
+<tr class="memdesc:ae9cd1fbafaeb73489693b40412d38580"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算一个数哈希值  <br /></td></tr>
+<tr class="separator:ae9cd1fbafaeb73489693b40412d38580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59a0e0e945d915aabca3c9b1c87ca982" id="r_a59a0e0e945d915aabca3c9b1c87ca982"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59a0e0e945d915aabca3c9b1c87ca982">MathSqrt</a> (float x, int method)</td></tr>
+<tr class="memdesc:a59a0e0e945d915aabca3c9b1c87ca982"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算一个数的开方  <br /></td></tr>
+<tr class="separator:a59a0e0e945d915aabca3c9b1c87ca982"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">宏定义说明</h2>
 <a id="ac3145a8f34bac63593aabc8a721f6352" name="ac3145a8f34bac63593aabc8a721f6352"></a>
@@ -315,6 +318,43 @@ $(function(){ initResizable(false); });
   </dd>
 </dl>
 <dl class="section return"><dt>返回</dt><dd>返回两个点间的距离 </dd></dl>
+
+</div>
+</div>
+<a id="ae9cd1fbafaeb73489693b40412d38580" name="ae9cd1fbafaeb73489693b40412d38580"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9cd1fbafaeb73489693b40412d38580">&#9670;&#160;</a></span>MathHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t MathHash </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacelibrary_t_1_1utiles.html#a693a4d01077c06b2f0c8b7ce6dc40dd7">PrintCallback</a></td>          <td class="paramname"><span class="paramname"><em>callback</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算一个数哈希值 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>需要计算的数 </td></tr>
+    <tr><td class="paramname">callback</td><td>打印回调函数 </td></tr>
+    <tr><td class="paramname">data</td><td>透传指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回哈希值 </dd></dl>
 
 </div>
 </div>
