@@ -94,7 +94,7 @@ static int JavaProgressProxy(size_t dfData, void *pData) {
 
 // -------------------- 新增方法 --------------------
 %extend libraryT::utiles::Point {
-    libraryT::utiles::Point(double x, double y) {
-        self = new libraryT::utiles::Point(x, y);
+    static libraryT::utiles::Point create(double x, double y) {
+        return libraryT::utiles::Point{x, y};
     }
-}
+};
