@@ -3,6 +3,7 @@
 
 #include <gtest/gtest.h>
 
+#include <iostream>
 #include <cmath>
 
 TEST(libraryT_utiles_test, add)
@@ -23,7 +24,13 @@ TEST(libraryT_utiles_test, sum)
 
 TEST(libraryT_utiles_test, hash)
 {
-    EXPECT_EQ(MathHash(3.14, nullptr, nullptr), std::hash<double>()(3.14));
+    auto callback = [](size_t res, void *data) -> int
+    {
+        std::cout << "callback: " << res << std::endl;
+        data = nullptr;
+        return 0;
+    };
+    EXPECT_EQ(MathHash(3.14, callback, nullptr), std::hash<double>()(3.14));
 }
 
 TEST(libraryT_utiles_test, sqrt)

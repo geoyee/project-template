@@ -17,6 +17,7 @@
 
 #include <vector>
 #include <functional>
+#include <cstddef>
 
 namespace libraryT
 {
