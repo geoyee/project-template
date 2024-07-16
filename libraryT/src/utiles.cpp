@@ -105,7 +105,8 @@ size_t Math::hash(double x, PrintCallback callback, void *data)
     size_t res = std::hash<double>()(x);
     if (callback)
     {
-        callback(res, data);
+        int tmp = callback("Callback", data);
+        (void)tmp;
     }
     return res;
 }
@@ -141,7 +142,7 @@ int MathSum(int *arr, int size)
     return libraryT::utiles::Math::sum(vec);
 }
 
-size_t MathHash(double x, PrintCallback callback, void *data)
+size_t MathHash(double x, libraryT::utiles::PrintCallback callback, void *data)
 {
     return libraryT::utiles::Math::hash(x, callback, data);
 }

@@ -42,7 +42,7 @@ typedef struct {
 class JvPrintCallback {
 public:
 	virtual ~JvPrintCallback() { }
-	virtual int run(size_t) {
+	virtual int run(const char *) {
 		printf("JvPrintCallback is running ...\n");
 		return 1;
 	}
@@ -50,7 +50,7 @@ public:
 %}
 
 %{
-static int JavaProgressProxy(size_t dfData, void *pData) {
+static int JavaProgressProxy(const char *pszMessage, void *pData) {
     JavaProgressData *psProgressInfo = (JavaProgressData *)pData;
     JNIEnv *jenv = psProgressInfo->jenv;
     int ret;
@@ -58,8 +58,10 @@ static int JavaProgressProxy(size_t dfData, void *pData) {
 	if (printCallbackClass == nullptr) { 
 		printf("Can't find Callback Class in \"libraryT/scripts/JvPrintCallback\".\n");
 	}
-    const jmethodID runMethod = jenv->GetMethodID(printCallbackClass, "run", "(Ljava/math/BigInteger;)I");
-    ret = jenv->CallIntMethod(psProgressInfo->pJavaCallback, runMethod, dfData);
+    const jmethodID runMethod = jenv->GetMethodID(printCallbackClass, "run", "(Ljava/lang/String;)I");
+    jstring temp_string = jenv->NewStringUTF(pszMessage);
+    ret = jenv->CallIntMethod(psProgressInfo->pJavaCallback, runMethod, temp_string);
+    jenv->DeleteLocalRef(temp_string);
     return ret;
 }
 %}

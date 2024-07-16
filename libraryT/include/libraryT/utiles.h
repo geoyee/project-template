@@ -17,6 +17,7 @@
 
 #include <vector>
 #include <functional>
+#include <cstddef>
 
 namespace libraryT
 {
@@ -43,10 +44,10 @@ struct Point
 
 /**
  * @brief 打印回调函数
- * @param 数据值
- * @param 透传指针
+ * @param 打印文字
+ * @return 返回是否成功，0表示成功
  */
-using PrintCallback = std::function<int(size_t, void *)>;
+using PrintCallback = std::function<int(const char *, void *)>;
 
 /**
  * @brief 自定义的Math类
