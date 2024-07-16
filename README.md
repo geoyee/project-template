@@ -13,7 +13,7 @@
     │    ├─ include/libraryT           # 头文件
     │    └─ src                        # 源文件
     ├─ sample                          # 示例代码
-    ├─ swig                            # swig多语言接口导出
+    ├─ swig                            # SWIG多语言接口导出
     ├─ test                            # 测试代码
     ├─ .clang-format                   # C/C++代码风格文件
     ├─ .cmake-format.py                # CMake代码风格文件
