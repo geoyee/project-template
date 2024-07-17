@@ -24,13 +24,14 @@ if (JNI_FOUND AND Java_FOUND)
     LANGUAGE java
     SOURCES ${CODE_FILES})
   swig_link_libraries(${PROJECT_NAME} ${PROJ_LIB_NAME})
+  set_property(TARGET ${PROJECT_NAME} PROPERTY SWIG_COMPILE_OPTIONS -doxygen)
 
   # 打包为jar包
   add_custom_command(
     TARGET ${PROJECT_NAME}
     WORKING_DIRECTORY "${PROJECT_BINARY_DIR}"
     POST_BUILD
-    COMMAND "${Java_JAVAC_EXECUTABLE}" "${PROJ_LIB_NAME}/scripts/*.java"
+    COMMAND "${Java_JAVAC_EXECUTABLE}" -encoding UTF-8 "${PROJ_LIB_NAME}/scripts/*.java"
     COMMAND "${Java_JAR_EXECUTABLE}" cf "${PROJ_LIB_NAME}.jar" "${PROJ_LIB_NAME}/scripts/*.class"
     COMMENT "Compile and package Java classes")
   set("${PROJ_LIB_NAME}_FILES" $<TARGET_FILE:"${SWIG_MODULE_${PROJECT_NAME}_REAL_NAME}">)
