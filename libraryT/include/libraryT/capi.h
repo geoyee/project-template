@@ -25,14 +25,30 @@ extern "C"
      */
     double LIB_API MathDistance(Point p1, Point p2);
 
+#ifdef SWIG
+    /**
+     * @brief 计算一个数的和
+     * @param arr 数组
+     * @return 返回和
+     */
+#else
     /**
      * @brief 计算一个数的和
      * @param arr 数组
      * @param size 数的个数
      * @return 返回和
      */
+#endif // SWIG
     int LIB_API MathSum(int *arr, int size);
 
+#ifdef SWIG
+    /**
+     * @brief 计算一个数哈希值
+     * @param x 需要计算的数
+     * @param callback 打印回调函数
+     * @return 返回哈希值
+     */
+#else
     /**
      * @brief 计算一个数哈希值
      * @param x 需要计算的数
@@ -40,6 +56,7 @@ extern "C"
      * @param data 透传指针
      * @return 返回哈希值
      */
+#endif // SWIG
     size_t LIB_API MathHash(double x, PrintCallback callback, void *data);
 
     /**

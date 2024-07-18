@@ -81,15 +81,18 @@ endif ()
 option(BUILD_SAMPLE "Build sample" ON)
 option(BUILD_TEST "Build test" ON)
 option(BUILD_OLANGS "Build other languages" ON)
+option(BUILD_DOC "Build doc" ON)
 
 # 添加子目录
 add_subdirectory(libraryT)
 set(LIBRARYT_HEADER_DIR "${PROJECT_ROOT_DIR}/libraryT/include")
 
+# 是否编译生成示例
 if (BUILD_SAMPLE)
   add_subdirectory(sample)
 endif ()
 
+# 是否编译生成测试
 if (BUILD_TEST)
   enable_testing()
   set(BUILD_GMOCK
@@ -105,6 +108,22 @@ if (BUILD_TEST)
   add_subdirectory(test)
 endif ()
 
+# 是否编译生成其他语言的接口
 if (BUILD_OLANGS)
   add_subdirectory(swig)
+endif ()
+
+# # 是否编译生成C/C++文档
+if (BUILD_DOC)
+  include(UseDoxygenDoc)
+
+  add_doxygen_doc(
+    BUILD_DIR
+    ${CMAKE_CURRENT_BINARY_DIR}/docs
+    DOXY_FILE
+    ${PROJECT_ROOT_DIR}/Doxyfile.in
+    TARGET_NAME
+    docs
+    COMMENT
+    "HTML documentation")
 endif ()

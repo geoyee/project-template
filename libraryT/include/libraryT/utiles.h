@@ -45,6 +45,7 @@ struct Point
 /**
  * @brief 打印回调函数
  * @param 打印文字
+ * @param 透传指针
  * @return 返回是否成功，0表示成功
  */
 using PrintCallback = std::function<int(const char *, void *)>;
@@ -78,12 +79,22 @@ public:
      */
     static int sum(std::vector<int>& nums);
 
+#ifdef SWIG
     /**
      * @brief 获取一个数的哈希值
      * @param x 要计算哈希值的数
      * @param callback 打印回调函数
      * @return 返回开方结果
      */
+#else
+    /**
+     * @brief 获取一个数的哈希值
+     * @param x 要计算哈希值的数
+     * @param callback 打印回调函数
+     * @param data 透传指针
+     * @return 返回开方结果
+     */
+#endif // SWIG
     static size_t hash(double x, PrintCallback callback, void *data);
 
     /**

@@ -1,14 +1,12 @@
 # project-template
 
-自用的 C/C++项目的 CMake 模板
+自用的 C/C++项目的 CMake 模板，包含代码风格化、测试、Java 导出、文档导出等示例
 
 ## 结构
 
 ```
-    ├─ .github/workflows               # *github CI/CD
     ├─ 3rdparty                        # 三方库
     ├─ cmake                           # CMake文件
-    ├─ doc                             # 文档
     ├─ libraryT                        # 模块模板
     │    ├─ include/libraryT           # 头文件
     │    └─ src                        # 源文件
@@ -20,14 +18,16 @@
     ├─ .gitignore                      # git忽略文件
     ├─ .gitmoudles                     # git子模块文件
     ├─ CMakeLists.txt                  # 顶层CMake文件
-    ├─ Doxygen                         # 文档生成配置文件
+    ├─ Doxygen.in                      # 文档生成配置文件
     └─ README.md                       # 说明
 ```
 
 ## 依赖
 
+> 非必要
+
 - 代码测试：[GoogleTest](https://github.com/google/googletest)
-- \*C/C++ 代码格式化：[LLVM](https://github.com/llvm/llvm-project)
-- \*CMake 代码格式化：[CMakeLang](https://github.com/cheshirekow/cmake_format)
-- \*多语言导出：[SWIG](https://github.com/doxygen/doxygen)
-- \*文档导出：[Doxygen](https://github.com/swig/swig)
+- C/C++ 代码格式化：[LLVM](https://github.com/llvm/llvm-project)
+- CMake 代码格式化：[CMakeLang](https://github.com/cheshirekow/cmake_format)
+- 多语言导出：[SWIG](https://github.com/doxygen/doxygen)
+- 文档导出：[Doxygen](https://github.com/swig/swig)

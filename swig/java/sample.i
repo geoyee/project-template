@@ -1,4 +1,4 @@
-%module LibraryT 
+%module LibraryT
 
 %{
 #include <libraryT/utiles.h>
@@ -41,11 +41,11 @@ typedef struct {
 %inline %{
 class JvPrintCallback {
 public:
-	virtual ~JvPrintCallback() { }
-	virtual int run(const char *) {
-		printf("JvPrintCallback is running ...\n");
-		return 1;
-	}
+    virtual ~JvPrintCallback() { }
+    virtual int run(const char *) {
+        printf("JvPrintCallback is running ...\n");
+        return 1;
+    }
 };
 %}
 
@@ -55,9 +55,9 @@ static int JavaProgressProxy(const char *pszMessage, void *pData) {
     JNIEnv *jenv = psProgressInfo->jenv;
     int ret;
     const jclass printCallbackClass = jenv->FindClass("libraryT/scripts/JvPrintCallback");
-	if (printCallbackClass == nullptr) { 
-		printf("Can't find Callback Class in \"libraryT/scripts/JvPrintCallback\".\n");
-	}
+    if (printCallbackClass == nullptr) {
+        printf("Can't find Callback Class in \"libraryT/scripts/JvPrintCallback\".\n");
+    }
     const jmethodID runMethod = jenv->GetMethodID(printCallbackClass, "run", "(Ljava/lang/String;)I");
     jstring temp_string = jenv->NewStringUTF(pszMessage);
     ret = jenv->CallIntMethod(psProgressInfo->pJavaCallback, runMethod, temp_string);
@@ -77,10 +77,10 @@ static int JavaProgressProxy(const char *pszMessage, void *pData) {
     if ($input != 0) {
         sProgressInfo.pJavaCallback = $input;
         $1 = JavaProgressProxy;
-		$2 = &sProgressInfo;
+        $2 = &sProgressInfo;
     } else {
         $1 = NULL;
-		$2 = NULL;
+        $2 = NULL;
     }
 }
 

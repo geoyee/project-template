@@ -15,6 +15,7 @@ if (JNI_FOUND AND Java_FOUND)
   set_property(SOURCE ${CODE_FILES} PROPERTY CPLUSPLUS ON)
   set(CMAKE_SWIG_OUTDIR "${PROJECT_BINARY_DIR}/${PROJ_LIB_NAME}/scripts")
   set(SWIG_OUTFILE_DIR "${PROJECT_BINARY_DIR}/cpp")
+  set(JAVADOC_OUTPUT_DIR "${PROJECT_BINARY_DIR}/javadoc")
   set(CMAKE_SWIG_FLAGS -package "${PROJ_LIB_NAME}.scripts")
 
   # 编译链接
@@ -24,6 +25,7 @@ if (JNI_FOUND AND Java_FOUND)
     LANGUAGE java
     SOURCES ${CODE_FILES})
   swig_link_libraries(${PROJECT_NAME} ${PROJ_LIB_NAME})
+  # 文档导出
   set_property(TARGET ${PROJECT_NAME} PROPERTY SWIG_COMPILE_OPTIONS -doxygen)
 
   # 打包为jar包
@@ -31,6 +33,7 @@ if (JNI_FOUND AND Java_FOUND)
     TARGET ${PROJECT_NAME}
     WORKING_DIRECTORY "${PROJECT_BINARY_DIR}"
     POST_BUILD
+    COMMAND "${Java_JAVADOC_EXECUTABLE}" -encoding UTF-8 -d "${JAVADOC_OUTPUT_DIR}" "${PROJ_LIB_NAME}/scripts/*.java"
     COMMAND "${Java_JAVAC_EXECUTABLE}" -encoding UTF-8 "${PROJ_LIB_NAME}/scripts/*.java"
     COMMAND "${Java_JAR_EXECUTABLE}" cf "${PROJ_LIB_NAME}.jar" "${PROJ_LIB_NAME}/scripts/*.class"
     COMMENT "Compile and package Java classes")
@@ -39,7 +42,8 @@ if (JNI_FOUND AND Java_FOUND)
   # 安装
   set(PROJ_JAR_PAHT "${PROJECT_BINARY_DIR}/${PROJ_LIB_NAME}.jar")
   install(FILES "${PROJ_JAR_PAHT}" DESTINATION bin)
-  install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION ${SHARED_BIN_DIR})
+  install(DIRECTORY "${JAVADOC_OUTPUT_DIR}" DESTINATION share)
+  install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION "${SHARED_BIN_DIR}")
 else ()
   message(WARNING "JNI or Java not found")
 endif ()

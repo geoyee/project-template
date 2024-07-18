@@ -24,10 +24,10 @@ TEST(libraryT_utiles_test, sum)
 
 TEST(libraryT_utiles_test, hash)
 {
-    auto callback = [](const char *str, void *data) -> int
+    auto callback = [](const char *res, void *data) -> int
     {
-        std::cout << str << std::endl;
-        (void)data;
+        std::cout << "C: " << res << std::endl;
+        data = nullptr;
         return 0;
     };
     EXPECT_EQ(MathHash(3.14, callback, nullptr), std::hash<double>()(3.14));

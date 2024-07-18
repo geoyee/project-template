@@ -8,6 +8,7 @@ with section("parse"):
         "update_cached": {"pargs": {"nargs": 1}},
         "update_cached_list": {"pargs": {"nargs": 1}},
         "set_work_dirs_force": {"pargs": {"nargs": 1}},
+        "add_doxygen_doc": {"pargs": {"nargs": 8}}
     }
 
     # Specify variable tags.
