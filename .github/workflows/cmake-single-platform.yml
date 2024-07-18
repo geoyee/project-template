@@ -24,7 +24,7 @@ jobs:
 
       - name: Setup Doxygen
         run: |
-          sudo apt-update
+          sudo apt update
           sudo apt install -y doxygen doxygen-latex doxygen-gui graphviz imagemagick
 
       - name: Checkout submodules
