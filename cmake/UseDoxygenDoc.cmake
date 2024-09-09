@@ -1,5 +1,5 @@
 function (add_doxygen_doc)
-  find_package(Doxygen REQUIRED)
+  find_package(Doxygen)
   if (DOXYGEN_FOUND)
     set(options)
     set(oneValueArgs BUILD_DIR DOXY_FILE TARGET_NAME COMMENT)
