@@ -28,7 +28,7 @@ TEST(libraryT_utiles_test, hash)
     {
         std::cout << "C: " << res << std::endl;
         data = nullptr;
-        return 0;
+        return data == nullptr ? 0 : -1;
     };
     EXPECT_EQ(MathHash(3.14, callback, nullptr), std::hash<double>()(3.14));
 }
