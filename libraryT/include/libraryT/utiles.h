@@ -15,6 +15,8 @@
 #define LIB_API
 #endif // _MSC_VER || __CYGWIN__ || __MINGW32__ || __BCPLUSPLUS__ || __MWERKS__
 
+#include <dbg.h>
+
 #include <vector>
 #include <functional>
 #include <cstddef>

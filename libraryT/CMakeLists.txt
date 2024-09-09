@@ -13,7 +13,7 @@ project(libraryT)
 # 编译为动态库
 add_library(${PROJECT_NAME} SHARED ${CODE_FILES})
 target_include_directories(${PROJECT_NAME} PUBLIC include)
-# target_link_libraries(${PROJECT_NAME} PUBLIC <other_libraries>)
+target_link_libraries(${PROJECT_NAME} PUBLIC ${DBG_LIBS})
 
 set(PROJ_LIB_NAME
     ${PROJECT_NAME}

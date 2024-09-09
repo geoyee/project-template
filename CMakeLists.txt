@@ -83,6 +83,14 @@ option(BUILD_TEST "Build test" ON)
 option(BUILD_OLANGS "Build other languages" ON)
 option(BUILD_DOC "Build doc" ON)
 
+# 添加第三方库
+add_definitions(-DDBG_MACRO_NO_WARNING)
+if (CMAKE_BUILD_TYPE STREQUAL "Release")
+  add_definitions(-DDBG_MACRO_DISABLE)
+endif ()
+add_subdirectory("${PROJECT_DEPENDS_DIR}/dbg-macro")
+update_cached_list(DBG_LIBS dbg_macro)
+
 # 添加子目录
 add_subdirectory(libraryT)
 set(LIBRARYT_HEADER_DIR "${PROJECT_ROOT_DIR}/libraryT/include")

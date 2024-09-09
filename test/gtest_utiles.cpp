@@ -35,7 +35,7 @@ TEST(libraryT_utiles_test, hash)
 
 TEST(libraryT_utiles_test, sqrt)
 {
-    float sqrt3 = static_cast<float>(sqrt(3));
+    float sqrt3 = dbg(static_cast<float>(sqrt(3)));
     // EXPECT_FLOAT_EQ(MathSqrt(3, 0), sqrt3); // 快速开方精度不够，导致测试失败
     EXPECT_TRUE(fabs(MathSqrt(3, 0) - sqrt3) < 0.01);
     EXPECT_FLOAT_EQ(MathSqrt(3, 1), sqrt3);
