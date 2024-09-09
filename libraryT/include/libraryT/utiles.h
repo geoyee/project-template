@@ -12,7 +12,11 @@
 #define LIB_API __declspec(dllexport)
 #endif // LIBRART_STATIC
 #else
+#if __GNUC__ >= 4
+#define LIB_API __attribute__((visibility("default")))
+#elif
 #define LIB_API
+#endif // __GNUC__ >= 4
 #endif // _MSC_VER || __CYGWIN__ || __MINGW32__ || __BCPLUSPLUS__ || __MWERKS__
 
 #include <dbg.h>
