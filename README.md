@@ -22,9 +22,7 @@
     └─ README.md                       # 说明
 ```
 
-## 依赖
-
-> 非必要
+## 依赖和工具
 
 - 代码测试：[GoogleTest](https://github.com/google/googletest)
 - C/C++ 代码格式化：[LLVM](https://github.com/llvm/llvm-project)
