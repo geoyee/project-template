@@ -22,9 +22,13 @@
     └─ README.md                       # 说明
 ```
 
-## 依赖和工具
+## 第三方依赖
 
 - 代码测试：[GoogleTest](https://github.com/google/googletest)
+- 变量调试：[dbg](https://github.com/sharkdp/dbg-macro)
+
+## 可选工具
+
 - C/C++ 代码格式化：[LLVM](https://github.com/llvm/llvm-project)
 - CMake 代码格式化：[CMakeLang](https://github.com/cheshirekow/cmake_format)
 - 多语言导出：[SWIG](https://github.com/doxygen/doxygen)
