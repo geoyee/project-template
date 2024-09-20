@@ -55,7 +55,7 @@ if (MSVC)
   # list(APPEND COMPILE_OPTIONS_DEFAULT "/nologo") list(APPEND CMAKE_STATIC_LINKER_FLAGS "/nologo")
 else ()
   add_compile_options($<$<CXX_COMPILER_ID:GNU,Clang>:-fPIC>)
-  add_compile_options($<$<CXX_COMPILER_ID:GNU,Clang>:-Wall)
+  add_compile_options($<$<CXX_COMPILER_ID:GNU,Clang>:-Wall$<SEMICOLON>-Wextra>)
   # add_compile_options($<$<CXX_COMPILER_ID:GNU,Clang>:-Werror>)
   add_compile_options(
     $<$<CXX_COMPILER_ID:GNU,Clang>:-Werror=uninitialized$<SEMICOLON>-Werror=return-type$<SEMICOLON>-Wconversion$<SEMICOLON>-Wsign-compare$<SEMICOLON>-Werror=unused-result$<SEMICOLON>-Werror=suggest-override$<SEMICOLON>-Wzero-as-null-pointer-constant$<SEMICOLON>-Wmissing-declarations$<SEMICOLON>-Wold-style-cast$<SEMICOLON>-Wnon-virtual-dtor>
