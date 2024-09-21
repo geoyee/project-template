@@ -12,7 +12,7 @@
     │    └─ src                        # 源文件
     ├─ sample                          # 示例代码
     ├─ swig                            # SWIG多语言接口导出
-    ├─ test                            # 测试代码
+    ├─ test                            # 测试代码（包含多语言测试）
     ├─ .clang-format                   # C/C++代码风格文件
     ├─ .cmake-format.py                # CMake代码风格文件
     ├─ .gitignore                      # git忽略文件
@@ -33,3 +33,4 @@
 - CMake 代码格式化：[CMakeLang](https://github.com/cheshirekow/cmake_format)
 - 多语言导出：[SWIG](https://github.com/doxygen/doxygen)
 - 文档导出：[Doxygen](https://github.com/swig/swig)
+- 多语言测试：[Gauge](https://github.com/getgauge/gauge)

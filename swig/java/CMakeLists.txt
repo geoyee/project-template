@@ -39,6 +39,31 @@ if (JNI_FOUND AND Java_FOUND)
     COMMENT "Compile and package Java classes")
   set("${PROJ_LIB_NAME}_FILES" $<TARGET_FILE:"${SWIG_MODULE_${PROJECT_NAME}_REAL_NAME}">)
 
+  # 多语言测试
+  if (BUILD_TEST AND CMAKE_BUILD_TYPE STREQUAL "Release")
+    # 拷贝文件到测试目录
+    add_custom_command(
+      TARGET ${PROJECT_NAME}
+      POST_BUILD
+      COMMAND ${CMAKE_COMMAND} -E copy_directory "${PROJECT_ROOT_DIR}/test/gauge/java"
+              "${CMAKE_CURRENT_BINARY_DIR}/gauge"
+      COMMAND ${CMAKE_COMMAND} -E copy_directory "${PROJECT_ROOT_DIR}/test/gauge/specs"
+              "${CMAKE_CURRENT_BINARY_DIR}/gauge/specs")
+    # 拷贝jar包和动态库到测试目录
+    add_custom_command(
+      TARGET ${PROJECT_NAME}
+      POST_BUILD
+      COMMAND ${CMAKE_COMMAND} -E copy "${PROJECT_BINARY_DIR}/${PROJ_LIB_NAME}.jar"
+              "${CMAKE_CURRENT_BINARY_DIR}/gauge/libs"
+      COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${PROJ_LIB_NAME}> "${CMAKE_CURRENT_BINARY_DIR}/gauge/libs"
+      COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${PROJECT_NAME}> "${CMAKE_CURRENT_BINARY_DIR}/gauge/libs")
+    # 执行测试
+    add_custom_command(
+      TARGET ${PROJECT_NAME}
+      POST_BUILD
+      COMMAND cd "${CMAKE_CURRENT_BINARY_DIR}/gauge" && gauge run)
+  endif ()
+
   # 安装
   set(PROJ_JAR_PAHT "${PROJECT_BINARY_DIR}/${PROJ_LIB_NAME}.jar")
   install(FILES "${PROJ_JAR_PAHT}" DESTINATION bin)
