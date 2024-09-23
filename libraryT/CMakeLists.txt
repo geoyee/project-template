@@ -17,7 +17,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC ${DBG_LIBS})
 
 set(PROJ_LIB_NAME
     ${PROJECT_NAME}
-    CACHE STRING "library name")
+    CACHE STRING "Library name")
 
 # 安装
 install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION ${SHARED_BIN_DIR})
