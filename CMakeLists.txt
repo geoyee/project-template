@@ -57,9 +57,8 @@ else ()
   add_compile_options($<$<CXX_COMPILER_ID:GNU,Clang>:-fPIC>)
   add_compile_options($<$<CXX_COMPILER_ID:GNU,Clang>:-Wall$<SEMICOLON>-Wextra>)
   # add_compile_options($<$<CXX_COMPILER_ID:GNU,Clang>:-Werror>)
-  add_compile_options(
-    $<$<CXX_COMPILER_ID:GNU,Clang>:-Werror=uninitialized$<SEMICOLON>-Werror=return-type$<SEMICOLON>-Wconversion$<SEMICOLON>-Wsign-compare$<SEMICOLON>-Werror=unused-result$<SEMICOLON>-Werror=suggest-override$<SEMICOLON>-Wzero-as-null-pointer-constant$<SEMICOLON>-Wmissing-declarations$<SEMICOLON>-Wold-style-cast$<SEMICOLON>-Wnon-virtual-dtor>
-    )
+  add_compile_options($<$<CXX_COMPILER_ID:GNU,Clang>:-Wno-unknown-pragmas>)
+  # add_compile_options($<$<CXX_COMPILER_ID:GNU,Clang>:-Werror=uninitialized$<SEMICOLON>-Werror=return-type$<SEMICOLON>-Wconversion$<SEMICOLON>-Wsign-compare$<SEMICOLON>-Werror=unused-result$<SEMICOLON>-Werror=suggest-override$<SEMICOLON>-Wzero-as-null-pointer-constant$<SEMICOLON>-Wmissing-declarations$<SEMICOLON>-Wold-style-cast$<SEMICOLON>-Wnon-virtual-dtor>)
   add_link_options($<$<CXX_COMPILER_ID:GNU,Clang>:-flto>)
   if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     add_compile_options(-g3)
@@ -91,6 +90,8 @@ if (CMAKE_BUILD_TYPE STREQUAL "Release")
 endif ()
 add_subdirectory("${PROJECT_DEPENDS_DIR}/dbg-macro")
 update_cached_list(DBG_LIBS dbg_macro)
+
+add_definitions(-D_USE_MATH_DEFINES)
 
 # 添加子目录
 add_subdirectory(libraryT)
