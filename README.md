@@ -1,6 +1,6 @@
 # project-template
 
-CMake管理的C/C++项目模板，包含代码风格化、测试、Java导出、文档导出等示例
+CMake 管理的 C/C++ 项目模板，包含代码风格化、测试、Java 导出、文档导出等示例
 
 ## 获取
 
