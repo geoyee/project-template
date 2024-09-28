@@ -1,6 +1,12 @@
 # project-template
 
-自用的 C/C++项目的 CMake 模板，包含代码风格化、测试、Java 导出、文档导出等示例
+CMake 管理的 C/C++ 项目模板，包含代码风格化、测试、Java 导出、文档导出等示例
+
+## 获取
+
+```
+git clone --recursive https://github.com/geoyee/project-template.git
+```
 
 ## 结构
 
@@ -22,13 +28,13 @@
     └─ README.md                       # 说明
 ```
 
-## 第三方依赖
+## 依赖
 
 - 代码测试：[GoogleTest](https://github.com/google/googletest)
 - 变量调试：[DBG-Macro](https://github.com/sharkdp/dbg-macro)
 - 日志记录：[SpdLog](https://github.com/gabime/spdlog)
 
-## 可选工具
+## 工具集
 
 - C/C++ 代码格式化：[LLVM](https://github.com/llvm/llvm-project)
 - CMake 代码格式化：[CMakeLang](https://github.com/cheshirekow/cmake_format)
