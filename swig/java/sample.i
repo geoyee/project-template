@@ -1,6 +1,7 @@
 %module LibraryT
 
 %{
+#include <libraryT/common.h>
 #include <libraryT/utiles.h>
 #include <libraryT/capi.h>
 %}
@@ -91,6 +92,7 @@ static int JavaProgressProxy(const char *pszMessage, void *pData) {
 %typemap(javaout) (libraryT::utiles::PrintCallback callback, void *data) { return $jnicall; }
 
 // -------------------- 导入需要解析的代码 --------------------
+%include <libraryT/common.h>
 %include <libraryT/utiles.h>
 %include <libraryT/capi.h>
 

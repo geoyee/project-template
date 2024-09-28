@@ -66,6 +66,6 @@ size_t LIB_API MathHash(double x, PrintCallback callback, void *data);
  * @return 返回开方结果
  */
 float LIB_API MathSqrt(float x, int method);
-}
+} // extern "C"
 
 #endif // LIBRARY_T_CAPI_H
