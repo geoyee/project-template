@@ -28,15 +28,15 @@ git clone --recursive https://github.com/geoyee/project-template.git
     └─ README.md                       # 说明
 ```
 
-## 依赖
+# 依赖
 
-- 代码测试：[GoogleTest](https://github.com/google/googletest)
-- 变量调试：[DBG-Macro](https://github.com/sharkdp/dbg-macro)
-- 日志记录：[SpdLog](https://github.com/gabime/spdlog)
+- 单元测试：[googletest: GoogleTest - Google Testing and Mocking Framework](https://github.com/google/googletest)
+- 变量调试：[dbg-macro: A dbg(…) macro for C++](https://github.com/sharkdp/dbg-macro)
+- 日志记录：[spdlog: Fast C++ logging library](https://github.com/gabime/spdlog)
 
-## 工具集
+# 工具集
 
-- C/C++ 代码格式化：[LLVM](https://github.com/llvm/llvm-project)
-- CMake 代码格式化：[CMakeLang](https://github.com/cheshirekow/cmake_format)
-- 多语言导出：[SWIG](https://github.com/doxygen/doxygen)
-- 文档导出：[Doxygen](https://github.com/swig/swig)
+- C/C++ 代码格式化：[llvm-project: The LLVM Project is a collection of modular and reusable compiler and toolchain technologies](https://github.com/llvm/llvm-project)
+- CMake 代码格式化：[cmake_format: Source code formatter for cmake listfiles](https://github.com/cheshirekow/cmake_format)
+- 多语言接口导出：[swig: SWIG is a software development tool that connects programs written in C and C++ with a variety of high-level programming languages](https://github.com/swig/swig)
+- 文档导出：[doxygen: Official doxygen git repository](https://github.com/doxygen/doxygen)
