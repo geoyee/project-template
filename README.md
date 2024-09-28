@@ -32,6 +32,7 @@ git clone --recursive https://github.com/geoyee/project-template.git
 
 - 代码测试：[GoogleTest](https://github.com/google/googletest)
 - 变量调试：[DBG-Macro](https://github.com/sharkdp/dbg-macro)
+- 日志记录：[SpdLog](https://github.com/gabime/spdlog)
 
 ## 工具集
 

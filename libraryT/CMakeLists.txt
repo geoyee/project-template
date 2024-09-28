@@ -6,14 +6,16 @@ file(
   src/*.c
   src/*.cc
   include/*.h
-  include/*.hpp)
+  include/*.hpp
+  include/*/*.h
+  include/*/*.hpp)
 
 project(libraryT)
 
 # 编译为动态库
 add_library(${PROJECT_NAME} SHARED ${CODE_FILES})
 target_include_directories(${PROJECT_NAME} PUBLIC include)
-target_link_libraries(${PROJECT_NAME} PUBLIC ${DBG_LIBS})
+target_link_libraries(${PROJECT_NAME} PUBLIC ${DBG_LIBS} ${SPDLOG_LIBS})
 
 set(PROJ_LIB_NAME
     ${PROJECT_NAME}
