@@ -1,5 +1,7 @@
 # project-template
 
+![Static Badge](https://img.shields.io/badge/Windows_build-pass-green) ![Static Badge](https://img.shields.io/badge/Linux_build-pass-green)
+
 CMake 管理的 C/C++ 项目模板，包含代码风格化、测试、Java 导出、文档导出等示例
 
 ## 获取
@@ -7,6 +9,9 @@ CMake 管理的 C/C++ 项目模板，包含代码风格化、测试、Java 导�
 ```
 git clone --recursive https://github.com/geoyee/project-template.git
 ```
+
+> [!IMPORTANT]
+> 如仅拉取了本仓库，可以通过 `git submodule update --init` 更新各个子模块
 
 ## 结构
 
@@ -34,9 +39,15 @@ git clone --recursive https://github.com/geoyee/project-template.git
 - 变量调试：[dbg-macro: A dbg(…) macro for C++](https://github.com/sharkdp/dbg-macro)
 - 日志记录：[spdlog: Fast C++ logging library](https://github.com/gabime/spdlog)
 
+> [!NOTE]
+> 如不需要这些第三方依赖，可自行删除
+
 # 工具集
 
 - C/C++ 代码格式化：[llvm-project: The LLVM Project is a collection of modular and reusable compiler and toolchain technologies](https://github.com/llvm/llvm-project)
 - CMake 代码格式化：[cmake_format: Source code formatter for cmake listfiles](https://github.com/cheshirekow/cmake_format)
 - 多语言接口导出：[swig: SWIG is a software development tool that connects programs written in C and C++ with a variety of high-level programming languages](https://github.com/swig/swig)
 - 文档导出：[doxygen: Official doxygen git repository](https://github.com/doxygen/doxygen)
+
+> [!TIP]
+> 工具集不安装也可以使用该模版，但使用这些工具能够使得该模版更加好用
