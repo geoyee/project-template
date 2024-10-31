@@ -6,7 +6,7 @@
 #if defined(_MSC_VER) || defined(__CYGWIN__) || defined(__MINGW32__) || defined(__BCPLUSPLUS__) || defined(__MWERKS__)
 #if defined(LIBRART_STATIC)
 #define LIB_API
-#elif defined(LIBRART_EXPORTS) // LIBRART_SHARED
+#elif defined(LIBRART_IMPORTS) // LIBRART_SHARED
 #define LIB_API __declspec(dllimport)
 #else
 #define LIB_API __declspec(dllexport)
