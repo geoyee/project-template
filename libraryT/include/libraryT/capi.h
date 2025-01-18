@@ -3,11 +3,11 @@
 #ifndef LIBRARY_T_CAPI_H
 #define LIBRARY_T_CAPI_H
 
-#include <libraryT/utiles.h>
+#include <libraryT/utils.h>
 
 extern "C"
 {
-using namespace libraryT::utiles;
+using namespace libraryT::utils;
 
 /**
  * @brief 计算两个整数的加法

@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef LIBRARY_T_UTILES_H
-#define LIBRARY_T_UTILES_H
+#ifndef LIBRARY_T_UTILS_H
+#define LIBRARY_T_UTILS_H
 
 #include <libraryT/common.h>
 
@@ -11,7 +11,7 @@
 
 namespace libraryT
 {
-namespace utiles
+namespace utils
 {
 /**
  * @brief 开方方法的枚举
@@ -108,7 +108,7 @@ public:
 private:
     SqrtMethod m_method; ///< 开方的方法
 };
-} // namespace utiles
+} // namespace utils
 } // namespace libraryT
 
-#endif // LIBRARY_T_UTILES_H
+#endif // LIBRARY_T_UTILS_H

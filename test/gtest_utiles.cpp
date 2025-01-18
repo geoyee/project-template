@@ -1,4 +1,4 @@
-#include <libraryT/utiles.h>
+#include <libraryT/utils.h>
 #include <libraryT/capi.h>
 
 #include <dbg.h>
@@ -7,26 +7,26 @@
 #include <iostream>
 #include <cmath>
 
-TEST(libraryT_utiles_test, add)
+TEST(libraryT_utils_test, add)
 {
     auto res = dbg(MathAdd(1, 2));
     EXPECT_EQ(res, 3);
 }
 
-TEST(libraryT_utiles_test, distance)
+TEST(libraryT_utils_test, distance)
 {
     auto res = dbg(MathDistance({0, 0}, {3, 4}));
     EXPECT_EQ(res, 5);
 }
 
-TEST(libraryT_utiles_test, sum)
+TEST(libraryT_utils_test, sum)
 {
     int nums[] = {1, 2, 3};
     auto res = dbg(MathSum(nums, 3));
     EXPECT_EQ(res, 6);
 }
 
-TEST(libraryT_utiles_test, hash)
+TEST(libraryT_utils_test, hash)
 {
     auto callback = [](const char *res, void *data) -> int
     {
@@ -38,7 +38,7 @@ TEST(libraryT_utiles_test, hash)
     EXPECT_EQ(res, std::hash<double>()(3.14));
 }
 
-TEST(libraryT_utiles_test, sqrt)
+TEST(libraryT_utils_test, sqrt)
 {
     float sqrt3 = dbg(static_cast<float>(sqrt(3)));
     auto res0 = dbg(MathSqrt(3, 0));
