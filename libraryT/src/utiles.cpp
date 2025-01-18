@@ -18,6 +18,7 @@
     {                                                                                                                  \
         if (x < 0)                                                                                                     \
         {                                                                                                              \
+            SPDLOG_ERROR("Sqrt of negative number: {}", x);                                                            \
             return FLOAT_NAN;                                                                                          \
         }                                                                                                              \
         else if (x == 0)                                                                                               \
@@ -149,6 +150,20 @@ size_t MathHash(double x, libraryT::utiles::PrintCallback callback, void *data)
 
 float MathSqrt(float x, int method)
 {
+    if (x < 0)
+    {
+        SPDLOG_ERROR("Sqrt of negative number: {}", x);
+        return FLOAT_NAN;
+    }
+    else if (x == 0)
+    {
+        return 0;
+    }
+    if (method < 0 || method > 2)
+    {
+        SPDLOG_ERROR("Sqrt method error: {}", method);
+        return FLOAT_NAN;
+    }
     auto mathCls = libraryT::utiles::Math(static_cast<libraryT::utiles::SqrtMethod>(method));
     return mathCls.sqrt(x);
 }
