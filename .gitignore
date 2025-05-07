@@ -40,3 +40,6 @@
 # CMAKE
 build
 bld
+
+# INI
+libraryT/include/libraryT/version.h

@@ -1,7 +1,8 @@
 %module LibraryT
 
 %{
-#include <libraryT/utiles.h>
+#include <libraryT/common.h>
+#include <libraryT/utils.h>
 #include <libraryT/capi.h>
 %}
 
@@ -67,13 +68,13 @@ static int JavaProgressProxy(const char *pszMessage, void *pData) {
 %}
 
 // 注意对%typemap和%extend等来说，如果有命名空间的话，需要加上命名空间
-%typemap(arginit, noblock=1) (libraryT::utiles::PrintCallback callback, void *data) {
+%typemap(arginit, noblock=1) (libraryT::utils::PrintCallback callback, void *data) {
     JavaProgressData sProgressInfo;
     sProgressInfo.jenv = jenv;
     sProgressInfo.pJavaCallback = NULL;
 }
 
-%typemap(in) (libraryT::utiles::PrintCallback callback, void *data) {
+%typemap(in) (libraryT::utils::PrintCallback callback, void *data) {
     if ($input != 0) {
         sProgressInfo.pJavaCallback = $input;
         $1 = JavaProgressProxy;
@@ -84,19 +85,20 @@ static int JavaProgressProxy(const char *pszMessage, void *pData) {
     }
 }
 
-%typemap(jni) (libraryT::utiles::PrintCallback callback, void *data) "jobject"
-%typemap(jtype) (libraryT::utiles::PrintCallback callback, void *data) "JvPrintCallback"
-%typemap(jstype) (libraryT::utiles::PrintCallback callback, void *data) "JvPrintCallback"
-%typemap(javain) (libraryT::utiles::PrintCallback callback, void *data) "$javainput"
-%typemap(javaout) (libraryT::utiles::PrintCallback callback, void *data) { return $jnicall; }
+%typemap(jni) (libraryT::utils::PrintCallback callback, void *data) "jobject"
+%typemap(jtype) (libraryT::utils::PrintCallback callback, void *data) "JvPrintCallback"
+%typemap(jstype) (libraryT::utils::PrintCallback callback, void *data) "JvPrintCallback"
+%typemap(javain) (libraryT::utils::PrintCallback callback, void *data) "$javainput"
+%typemap(javaout) (libraryT::utils::PrintCallback callback, void *data) { return $jnicall; }
 
 // -------------------- 导入需要解析的代码 --------------------
-%include <libraryT/utiles.h>
+%include <libraryT/common.h>
+%include <libraryT/utils.h>
 %include <libraryT/capi.h>
 
 // -------------------- 新增方法 --------------------
-%extend libraryT::utiles::Point {
-    static libraryT::utiles::Point create(double x, double y) {
-        return libraryT::utiles::Point{x, y};
+%extend libraryT::utils::Point {
+    static libraryT::utils::Point create(double x, double y) {
+        return libraryT::utils::Point{x, y};
     }
 };

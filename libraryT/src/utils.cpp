@@ -1,4 +1,4 @@
-#include <libraryT/utiles.h>
+#include <libraryT/utils.h>
 #include <libraryT/capi.h>
 
 #include <iostream>
@@ -18,6 +18,7 @@
     {                                                                                                                  \
         if (x < 0)                                                                                                     \
         {                                                                                                              \
+            SPDLOG_ERROR("Sqrt of negative number: {}", x);                                                            \
             return FLOAT_NAN;                                                                                          \
         }                                                                                                              \
         else if (x == 0)                                                                                               \
@@ -78,7 +79,7 @@ inline float quickSqrt(float value)
 
 namespace libraryT
 {
-namespace utiles
+namespace utils
 {
 int Math::add(int x, int y)
 {
@@ -123,32 +124,46 @@ float Math::sqrt(float x)
             return quickSqrt(x);
     }
 }
-} // namespace utiles
+} // namespace utils
 } // namespace libraryT
 
 int MathAdd(int x, int y)
 {
-    return libraryT::utiles::Math::add(x, y);
+    return libraryT::utils::Math::add(x, y);
 }
 
-double MathDistance(libraryT::utiles::Point p1, libraryT::utiles::Point p2)
+double MathDistance(libraryT::utils::Point p1, libraryT::utils::Point p2)
 {
-    return libraryT::utiles::Math::distance(p1, p2);
+    return libraryT::utils::Math::distance(p1, p2);
 }
 
 int MathSum(int *arr, int size)
 {
     std::vector<int> vec(arr, arr + size);
-    return libraryT::utiles::Math::sum(vec);
+    return libraryT::utils::Math::sum(vec);
 }
 
-size_t MathHash(double x, libraryT::utiles::PrintCallback callback, void *data)
+size_t MathHash(double x, libraryT::utils::PrintCallback callback, void *data)
 {
-    return libraryT::utiles::Math::hash(x, callback, data);
+    return libraryT::utils::Math::hash(x, callback, data);
 }
 
 float MathSqrt(float x, int method)
 {
-    auto mathCls = libraryT::utiles::Math(static_cast<libraryT::utiles::SqrtMethod>(method));
+    if (x < 0)
+    {
+        SPDLOG_ERROR("Sqrt of negative number: {}", x);
+        return FLOAT_NAN;
+    }
+    else if (x == 0)
+    {
+        return 0;
+    }
+    if (method < 0 || method > 2)
+    {
+        SPDLOG_ERROR("Sqrt method error: {}", method);
+        return FLOAT_NAN;
+    }
+    auto mathCls = libraryT::utils::Math(static_cast<libraryT::utils::SqrtMethod>(method));
     return mathCls.sqrt(x);
 }
