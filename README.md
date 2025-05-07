@@ -48,7 +48,7 @@ git clone --recursive https://github.com/geoyee/project-template.git
 - CMake 代码格式化：[cmake_format](https://github.com/cheshirekow/cmake_format)
 - 多语言接口导出：[swig](https://github.com/swig/swig)
 - 文档导出：[doxygen](https://github.com/doxygen/doxygen)
-- 多语言测试：[Gauge](https://github.com/getgauge/gauge)
+- 多语言测试：[gauge](https://github.com/getgauge/gauge)
 
 > [!TIP]
 > 工具集不安装也可以使用该模版，但使用这些工具能够使得该模版更加好用
