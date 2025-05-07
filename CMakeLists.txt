@@ -6,6 +6,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(LINK_WHAT_YOU_USE ON)
 
+# 开启目录层次结构
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
 # 设置CMake策略
 if (POLICY CMP0078)
   cmake_policy(SET CMP0078 NEW)
@@ -38,6 +41,8 @@ message(STATUS "PROJECT_ROOT_DIR: ${PROJECT_ROOT_DIR}")
 set(PROJECT_DEPENDS_DIR "${PROJECT_ROOT_DIR}/3rdparty")
 message(STATUS "PROJECT_DEPENDS_DIR: ${PROJECT_DEPENDS_DIR}")
 set_work_dirs_force("${PROJECT_BINARY_DIR}")
+set(PROJECT_VERSION_PATH "${PROJECT_ROOT_DIR}/VERSION")
+message(STATUS "PROJECT_VERSION_PATH: ${PROJECT_VERSION_PATH}")
 
 # 读取缓存
 find_program(CCACHE_FOUND ccache)
@@ -51,6 +56,7 @@ if (MSVC)
   add_compile_options($<$<CXX_COMPILER_ID:MSVC>:/utf-8>)
   add_compile_options($<$<CXX_COMPILER_ID:MSVC>:/W4>)
   # add_compile_options($<$<CXX_COMPILER_ID:MSVC>:/WX>)
+  add_compile_options($<$<CXX_COMPILER_ID:MSVC>:/wd4828$<SEMICOLON>/wd4251>)
   add_compile_options($<$<CXX_COMPILER_ID:MSVC>:/EHsc>)
   add_compile_options($<$<CXX_COMPILER_ID:MSVC>:/Zc:__cplusplus>)
   add_compile_options($<$<CXX_COMPILER_ID:MSVC>:/Zc:preprocessor>)
@@ -96,6 +102,7 @@ add_subdirectory("${PROJECT_DEPENDS_DIR}/dbg-macro")
 update_cached_list(DBG_LIBS dbg_macro)
 
 add_subdirectory("${PROJECT_DEPENDS_DIR}/spdlog")
+set_property(TARGET spdlog PROPERTY FOLDER "ExtraTargets")
 update_cached_list(SPDLOG_LIBS spdlog)
 
 # 添加子目录
@@ -119,6 +126,8 @@ if (BUILD_TEST)
         CACHE BOOL "Prevent overriding the parent project's compiler/linker settings" FORCE)
   endif ()
   add_subdirectory("${PROJECT_DEPENDS_DIR}/googletest")
+  set_property(TARGET gtest PROPERTY FOLDER "ExtraTargets")
+  set_property(TARGET gtest_main PROPERTY FOLDER "ExtraTargets")
   update_cached_list(GTest_LIBS GTest::gtest)
   add_subdirectory(test)
 endif ()

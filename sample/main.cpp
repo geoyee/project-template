@@ -1,10 +1,13 @@
 #include <libraryT/utils.h>
 #include <libraryT/capi.h>
+#include <libraryT/version.h>
 
 #include <iostream>
 
 int main(int argc, char *argv[])
 {
+    libraryT::version::display();
+
     if (argc != 3)
     {
         std::cout << "Usage: " << argv[0] << " int int" << std::endl;
